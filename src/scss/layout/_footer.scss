@@ -1,0 +1,94 @@
+footer {
+  padding: 2.125rem 0 0.5rem;
+  background: darken($brand-color-primary, 8%);
+  color: $white;
+
+  .bottom-logo {
+    margin: 0 auto;
+    display: block;
+    max-width: 280px;
+  }
+
+  .break-line {
+    height: 1px;
+    background-image: linear-gradient(to right, #ed0e6a, #f58876);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .phone {
+    background: url("../images/icon-phone.png") no-repeat left center;
+    padding-left: 30px;
+    color: $white;
+    display: inline-block;
+    min-height: 25px;
+  }
+
+  .location {
+    background: url("../images/icon-location.png") no-repeat left top;
+    padding-left: 25px;
+    color: $white;
+    display: inline-block;
+    min-height: 25px;
+    margin-bottom: 1rem;
+    background-size: 16px;
+  }
+
+  .email {
+    background: url("../images/icon-email.png") no-repeat left top;
+    padding-left: 35px;
+    color: $white;
+    display: inline-block;
+    margin-bottom: 1rem;
+    background-size: 24px;
+  }
+
+  a {
+    color: $white;
+    cursor: pointer;
+
+    @include on-event {
+      color: lighten($brand-color-secondary, 15);
+      text-decoration: none;
+    }
+  }
+
+  .info-text {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .social-links {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      margin-right: 1rem;
+
+      a {
+        display: block;
+        background-position-x: center;
+        background-position-y: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        filter: invert(1);
+        padding: 0.625rem;
+
+        // Mixin
+        @include on-event-svg($brand-color-primary);
+
+        &.facebook {
+          background-image: url("../images/social-facebook.svg");
+        }
+
+        &.zalo {
+          background-image: url("../images/icon-zalo.png");
+          filter: invert(0);
+        }
+      }
+    }
+  }
+}

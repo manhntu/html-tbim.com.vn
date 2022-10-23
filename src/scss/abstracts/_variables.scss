@@ -1,0 +1,87 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+
+/// Regular font family
+/// @type List
+$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+
+/// Code (monospace) font family
+/// @type List
+$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
+
+/// Font family name
+/// @type Font
+$font-family-primary: 'Open Sans' !default;
+
+/// Fonts weight map values
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual weight
+$font-weights: (
+  "Light": 300,
+  "Regular": 400,
+  "Medium": 500,
+  "SemiBold": 600,
+  "Bold": 700,
+  "ExtraBold": 800,
+) !default;
+
+/// Copy text color
+/// @type Color
+$text-color: #606060 !default;
+
+/// Main brand color primary
+/// @type Color
+$brand-color-primary: #70585E !default;
+
+/// Main brand color secondary
+/// @type Color
+$brand-color-secondary: #f69066 !default;
+
+/// Light grey
+/// @type Color
+$light-grey: rgb(237, 237, 237) !default;
+
+/// Medium grey
+/// @type Color
+$mid-grey: rgb(153, 153, 153) !default;
+
+/// Dark grey
+/// @type Color
+$dark-grey: rgb(68, 68, 68) !default;
+
+
+/// Link color
+/// @type Color
+$link-color: $brand-color-primary !default;
+
+/// Link color hover
+/// @type Color
+$link-color-hover: darken($brand-color-primary, 20%) !default;
+
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1180px !default;
+
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  'small': 320px,
+  'medium': 768px,
+  'large': 1024px,
+) !default;
+
+
+
+
+
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '/assets/' !default;

@@ -1,0 +1,18 @@
+// Toggle global options
+$enable-gradients: true;
+$enable-shadows: true;
+
+// Customize some defaults
+$primary: $brand-color-primary;
+$secondary: $brand-color-secondary;
+$body-color: #252525;
+$body-bg: #fff;
+$border-radius: .4rem;
+$headings-font-weight: font-weight("medium") !default;
+$font-weight-bold: font-weight("medium") !default;
+
+// Fonts
+$font-family-sans-serif: $text-font-stack;
+
+$breadcrumb-divider: quote("|");
+// $breadcrumb-divider: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxwYXRoIGQ9Ik0yLjUgMEwxIDEuNSAzLjUgNCAxIDYuNSAyLjUgOGw0LTQtNC00eiIgZmlsbD0iY3VycmVudENvbG9yIi8+PC9zdmc+");

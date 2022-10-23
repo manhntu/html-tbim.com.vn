@@ -1,0 +1,62 @@
+$bg-navbar: darken($brand-color-primary, 5%);
+
+.body-offcanvas {
+    overflow-x: hidden; /* Prevent scroll on narrow devices */
+    padding-top: 56px; // for offcanvas.scss
+}
+
+.nav-offcanvas {
+    background-color: $bg-navbar;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+
+    .navbar-brand {
+        color: $white;
+    }
+
+    .navbar-toggler {
+        color: rgba($brand-color-primary, 0.5);
+        border-color: rgba($brand-color-primary, 0.1);
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+}
+
+@include media-breakpoint-down(lg) {
+  .navbar-offcanvas-collapse {
+    position: fixed;
+    top: 56px; /* Height of navbar */
+    bottom: 0;
+    left: 100%;
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    overflow-y: auto;
+    visibility: hidden;
+    background-color: $bg-navbar;
+    transition: visibility 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out,
+      -webkit-transform 0.3s ease-in-out;
+
+    .navbar-nav .nav-link {
+        color: rgba($white, 0.5);
+
+        .active {
+            color: $white;
+        }
+    }
+
+    &.open {
+        visibility: visible;
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+        z-index: 9999;
+    }
+  }
+}

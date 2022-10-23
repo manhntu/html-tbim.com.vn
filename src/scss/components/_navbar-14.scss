@@ -1,0 +1,127 @@
+$bg-navbar: darken($brand-color-secondary, 5%);
+
+.ftco-navbar-light {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  z-index: 3;
+  padding: 0;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 5px 20px -17px rgba(0, 0, 0, 0.34);
+  -moz-box-shadow: 0px 5px 20px -17px rgba(0, 0, 0, 0.34);
+  box-shadow: 0px 5px 20px -17px rgba(0, 0, 0, 0.34);
+
+  @include media-breakpoint-down(md) {
+    position: relative;
+    top: 0;
+    padding: 10px 15px;
+  }
+
+  .navbar-brand {
+    color: $white;
+    text-transform: uppercase;
+    font-weight: 700;
+    &:hover,
+    &:focus {
+      color: $white;
+    }
+    @include media-breakpoint-down(md) {
+      color: $white;
+    }
+
+    img {
+      width: 224px;
+    }
+  }
+
+  .navbar-nav {
+    @include media-breakpoint-down(md) {
+      padding-bottom: 10px;
+    }
+    > .nav-item {
+      > .nav-link {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-weight: 700;
+        color: $text-color;
+        position: relative;
+        opacity: 1 !important;
+
+        @include media-breakpoint-up(lg) {
+          &:hover {
+            color: $white;
+            background: darken($brand-color-secondary, 10%);
+          }
+        }
+        @include media-breakpoint-down(md) {
+          padding-left: 0;
+          padding-right: 0;
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+          color: rgba(255, 255, 255, 0.7);
+          &:hover {
+            color: $white;
+          }
+        }
+      }
+
+      .dropdown-menu {
+        border: none;
+        background: $white;
+        -webkit-box-shadow: 0px 10px 34px -20px rgba(0, 0, 0, 0.41);
+        -moz-box-shadow: 0px 10px 34px -20px rgba(0, 0, 0, 0.41);
+        box-shadow: 0px 10px 34px -20px rgba(0, 0, 0, 0.41);
+        border-radius: 4px;
+        padding: 0;
+        .dropdown-item {
+          font-size: 12px;
+          color: $black;
+          &:hover,
+          &:focus {
+            background: $brand-color-primary;
+            color: $white;
+          }
+        }
+      }
+
+      &.cta {
+        > a {
+          color: $white;
+          background: $brand-color-primary;
+          border-radius: 0px;
+          @include media-breakpoint-down(sm) {
+            padding-left: 15px;
+            padding-right: 15px;
+          }
+          @include media-breakpoint-down(md) {
+            color: $white;
+            background: $brand-color-primary;
+            border-radius: 4px;
+          }
+        }
+      }
+      &.active {
+        > a {
+          color: $white;
+          @include media-breakpoint-up(lg) {
+            background: darken($brand-color-primary, 10%);
+          }
+        }
+      }
+    }
+  }
+
+  .navbar-toggler {
+    border: none;
+    color: rgba(255, 255, 255, 0.5) !important;
+    cursor: pointer;
+    padding-right: 0;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    &:focus {
+      outline: none !important;
+    }
+  }
+}

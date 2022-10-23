@@ -1,0 +1,158 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+/// BEM: Block
+/// @access public
+/// @param {String} $block - block's name
+/// @param {Boolean} $self - BEM on current class
+/// @param {String} $seperate - Element is true, Modifier is false
+@mixin bem-block($block, $self: false, $seperate: '__') {
+  $root: &;
+  @if $self {
+    $last-item: [];
+    // @debug "root: #{$root}";
+    @each $item in $root {
+      $last-item: nth($item, -1);
+    }
+
+    @at-root #{$root} {
+      #{$last-item}#{$seperate}#{$block} {
+        @content;
+      }
+    }
+  } @else {
+    @at-root {
+      #{$root}#{$seperate}#{$block} {
+        @content;
+      }
+    }
+  }
+}
+
+/// BEM: Element
+/// @access public
+/// @param {String} $element - Element's name
+@mixin bem-element($element, $self: false) {
+  @include bem-block($element, $self, '__') {
+    @content;
+  }
+}
+
+/// BEM: Modifier
+/// @access public
+/// @param {String} $modifier - Modifier's name
+@mixin bem-modifier($modifier, $self: false) {
+  @include bem-block($modifier, $self, '--') {
+    @content;
+  }
+}
+
+/// Change svg background color
+/// @author Manh NT
+/// @param {String} $color - Color of svg want to change
+/// @param {Number} $opacity
+@mixin svg-color($color: #000, $opacity: 1) {
+  $r: red($color) / 255;
+  $g: green($color) / 255;
+  $b: blue($color) / 255;
+  $a: $opacity;
+
+  // grayscale fallback if SVG from data url is not supported
+  $lightness: lightness($color);
+  filter: saturate(0%) brightness(0%) invert($lightness) opacity($opacity);
+
+  // color filter
+  $svg-filter-id: "svg-color";
+  filter: url('data:image/svg+xml;utf8,\
+    <svg xmlns="http://www.w3.org/2000/svg">\
+      <filter id="#{$svg-filter-id}" color-interpolation-filters="sRGB">\
+        <feColorMatrix type="matrix" values="\
+          0 0 0 0 #{$r}\
+          0 0 0 0 #{$g}\
+          0 0 0 0 #{$b}\
+          0 0 0 #{$a} 0\
+        "/>\
+      </filter>\
+    </svg>\
+    ##{$svg-filter-id}');
+}
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+/// Event hover wrapper
+/// @author Manh NT
+@mixin on-hover {
+  &:hover {
+    @content;
+  }
+}
+
+/// Event wrapper on svg link event
+/// @author Manh NT
+/// @param {String} $color - Color of svg want to change on event
+@mixin on-event-svg($color: #000) {
+  @include on-event {
+      @include svg-color($color);
+  }
+}
+
+/// Make a context based selector a little more friendly
+/// @author Kitty Giraudel
+/// @param {String} $context
+@mixin when-inside($context) {
+  #{$context} & {
+    @content;
+  }
+}
+
+/// Generate font-face
+/// @author Manh NT
+/// @param {String} $name
+/// @param {String} $file
+/// @param {Number} $font-weight
+/// @param {String} $font-style
+@mixin font-face($name, $file, $font-weight, $font-style: '') {
+  @font-face {
+    font-family: "#{$name}";
+    @if $font-style == '' {
+      font-style: normal;
+    } @else if $font-style == 'italic' {
+      font-style: italic;
+    }
+    font-weight: $font-weight;
+    // IE9 Compat Modes
+    src: url("../fonts/#{$file}#{$font-style}.eot");
+    src: local(""),
+         // IE6-IE8
+         url("../fonts/#{$file}#{$font-style}.eot?#iefix") format("embedded-opentype"),
+         // Super Modern Browsers
+         url("../fonts/#{$file}#{$font-style}.woff2") format("woff2"),
+         // Modern Browsers
+         url("../fonts/#{$file}#{$font-style}.woff") format("woff"),
+         // Safari, Android, iOS
+         url("../fonts/#{$file}#{$font-style}.ttf") format("truetype"),
+         // Legacy iOS
+         url("../fonts/#{$file}#{$font-style}.svg#OpenSans") format("svg");
+  }
+}
+

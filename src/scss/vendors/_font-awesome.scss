@@ -1,0 +1,14 @@
+// Font Awesome CDN: https://cdnjs.com/libraries/font-awesome
+
+// FontAwesome 4.7
+// Should be copy all font node_modules\font-awesome\fonts to src\assets\fonts
+// $fa-font-path: "../fonts";
+// @import "~font-awesome/scss/font-awesome";
+
+// FontAwsome 5
+// Copy fonts from node_modules\@fortawesome\fontawesome-free\webfonts to src\assets\fonts
+$fa-font-path: "../fonts";
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+@import '~@fortawesome/fontawesome-free/scss/solid';

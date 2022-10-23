@@ -1,0 +1,8 @@
+// Get font: https://google-webfonts-helper.herokuapp.com/fonts/open-sans?subsets=latin,vietnamese
+@each $name, $value in $font-weights {
+  // Font style normal
+  @include font-face($font-family-primary, "open-sans-v34-vietnamese_latin-#{$value}", $value);
+
+  // Font style italic
+  @include font-face($font-family-primary, "open-sans-v34-vietnamese_latin-#{$value}", $value, 'italic');
+}

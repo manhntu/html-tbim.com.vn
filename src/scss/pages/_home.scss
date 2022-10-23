@@ -1,0 +1,61 @@
+.our-work {
+  background-color: #f9ede7;
+  position: relative;
+  overflow: hidden;
+
+  .step {
+    padding: 1rem;
+    background: $white;
+    box-shadow: 0 10px 20px -5px rgba($black, .5), 10px 0 20px -5px rgba($black, .5);
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+
+    h3 {
+      font-size: 1.5rem;
+      padding: 1rem 0 1rem 3.25rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      position: relative;
+      margin-bottom: 1rem;
+
+      &::after{
+        content: "";
+        display: block;
+        height: 1px;
+        border-bottom: 1px solid;
+        width: 50%;
+        margin-top: 5px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      span {
+        font-size: 5rem;
+        position: absolute;
+        left: 0;
+        top: -10px;
+        line-height: 1;
+        font-weight: 800;
+      }
+    }
+
+    p {
+      font-size: 1.25rem;
+      font-style: italic;
+    }
+  }
+
+  .triangle-down {
+    position: absolute;
+    top: 0;
+    border-color: #eac9b9 transparent transparent transparent;
+    border-width: thin 0 0 280px;
+    border-style: solid;
+    height: 0;
+    width: 100%;
+    left: 45%;
+  }
+}
