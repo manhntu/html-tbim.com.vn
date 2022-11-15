@@ -18,6 +18,7 @@ footer {
 
   .phone {
     background: url("../images/icon-phone.png") no-repeat left center;
+    background-size: contain;
     padding-left: 30px;
     color: $white;
     display: inline-block;

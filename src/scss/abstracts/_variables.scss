@@ -5,7 +5,7 @@
 
 /// Regular font family
 /// @type List
-$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+$text-font-stack: 'Source Sans 3', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
 
 /// Code (monospace) font family
 /// @type List
@@ -13,7 +13,7 @@ $code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
 
 /// Font family name
 /// @type Font
-$font-family-primary: 'Open Sans' !default;
+$font-family-primary: 'Source Sans 3' !default;
 
 /// Fonts weight map values
 /// @prop {String} keys - Keys are identifiers mapped to a given length
@@ -25,6 +25,7 @@ $font-weights: (
   "SemiBold": 600,
   "Bold": 700,
   "ExtraBold": 800,
+  "Black": 900
 ) !default;
 
 /// Copy text color

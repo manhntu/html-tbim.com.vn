@@ -3,6 +3,13 @@ import $ from 'jquery';
 $(function () {
   // console.log('Webpack loaded!');
   // $('body').addClass('bg-light');
+  $('.scrollTo').on('click', function (e) {
+    e.preventDefault();
+    const target = $(this).attr('href');
+    $('html, body').animate({
+      scrollTop: ($(target).offset().top)
+    }, 500);
+  });
 });
 
 // Defining event listener function
